@@ -2,6 +2,11 @@ group 'ca.couver.privacy_screen'
 version '1.0-SNAPSHOT'
 
 buildscript {
+       // conditional for compatibility with older gradle versions
+    if (project.android.hasProperty('namespace')) {
+        namespace 'ca.couver.privacy_screen'
+    }
+    
     ext.kotlin_version = '1.6.10'
     repositories {
         google()
